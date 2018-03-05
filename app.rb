@@ -7,7 +7,13 @@ get '/secret' do
   "secret route is here"
 end
 
-get '/cat' do
+get '/random cat' do
   @cat_name = ["Amigo", "Oscar", "Viking"].sample
+  erb(:index)
+end
+
+get '/named-cat' do
+  @cat_name = params[:name]
+  p params
   erb(:index)
 end
